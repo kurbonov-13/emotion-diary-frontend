@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  /* Цветовая схема */
+  --color-bg: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-muted: #9CA3AF;
+  --color-heading: #1F2937;
+  --color-accent: #10B981;
+  --color-accent-hover: #059669;
+  --color-success: #34D399;
+  --color-warning: #F59E0B; /* Контрастный оранжевый */
+  --color-danger: #FFABAB;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+
+  /* Шрифты */
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.text-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.text-subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Buttons */
+button, .btn {
+  border-radius: var(--radius);
+  border: none;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  min-width: 48px; /* Увеличено для вмещения текста */
+  height: 48px; /* Квадратная форма */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--color-accent-hover);
+}
+
+button:focus, .btn:focus,
+button:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--color-accent-hover);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+/* Calendar Styles */
+.calendar-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.custom-calendar {
+  border: none;
+  background-color: transparent;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+}
+
+.react-calendar__navigation {
+  display: none; /* Скрыты кнопки переключения месяцев */
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: 10px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-calendar__tile {
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  padding: 8px;
+  width: 48px;
+  height: 48px; /* Увеличено для вмещения смайлика */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Предотвращает обрезку */
+}
+
+.react-calendar__tile:hover {
+  background-color: var(--color-border);
+  transform: scale(1.05);
+}
+
+.react-calendar__tile--active {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.react-calendar__tile--now {
+  background-color: transparent;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.react-calendar__tile--weekend {
+  color: var(--color-warning);
+}
+
+.react-calendar__tile .mood-emoji-tile {
+  font-size: 0.7rem; /* Уменьшено для компактности */
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.mood-emoji {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: var(--color-text-primary);
+}
+
+/* Donut Chart */
+.donut-chart {
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.recharts-pie-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  fill: var(--color-text-secondary);
+}
+
+/* Modals */
+.modal-content {
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+/* Alerts */
+.alert {
+  border-radius: var(--radius);
+  background-color: var(--color-danger);
+  color: #fff;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Wrapper */
+.calendar-wrapper {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Navbar and Footer */
+.navbar, .navbar-light {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+footer {
+  background-color: var(--color-surface);
+  color: var(--color-muted);
+  padding: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .text-title {
+    font-size: 1.5rem;
+  }
+  
+  .text-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  button, .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Улучшения для компонентов */
+.about-project {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.streak-counter {
+  margin: 1.5rem 0;
+  text-align: center;
+}
