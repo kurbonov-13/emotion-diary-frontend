@@ -10,7 +10,7 @@ const AboutProject = () => {
       boxShadow: 'var(--shadow-card)'
     }}>
       <h3 style={{ color: 'var(--color-accent)' }}>Emotion Diary</h3>
-      <p><strong>Разработчики:</strong> Курбонов и Зоидов</p>
+      <p><strong>Разработчики:</strong> Курбонов</p>
       <p><strong>Описание:</strong> Дневник для ежедневного отслеживания эмоционального состояния</p>
       <p><strong>Технологии:</strong> React, Vite, современный JavaScript</p>
       <p><strong>Особенности:</strong> Интуитивный интерфейс, анализ настроения, визуальная статистика</p>
